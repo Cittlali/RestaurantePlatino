@@ -1,0 +1,59 @@
+﻿@model Practica.Models.Formulario
+@{
+    ViewData["Title"] = "Eliminar";
+}
+<h3>¿Estas seguro que deseas eliminar este usuario?</h3>
+<div>
+    <h4>Datos personales</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.apellidoP)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.apellidoP)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.apellidoM)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.apellidoM)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.usuario)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.usuario)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.contrasena)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.contrasena)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.telefono)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.telefono)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.direccion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.direccion)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        <a asp-action="Index">Volver a la lista</a>
+    </form>
+</div>

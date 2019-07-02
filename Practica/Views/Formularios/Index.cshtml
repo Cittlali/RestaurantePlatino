@@ -1,0 +1,111 @@
+﻿@model Practica.Models.FormularioGenreViewModel
+
+@{
+    ViewData["Title"] = "Registro";
+}
+
+<h1 style="color:#075D99; margin-left: 400px;">Lista de usuarios </h1>
+
+<p>
+    <a asp-action="Create" style="color:#075D99; margin-left: 890px;">Registrar nuevo usuario</a>
+</p>
+
+<form asp-controller="Formularios" asp-action="Index" method="get">
+    <div class="list-group-item disabled" aria-disabled="true" style="margin-left: 530px;">
+        <center><h4>Buscar</h4></center><br />
+        <div class="text-decoration-none">
+            <label class="text-decoration-none">Nombre</label>  <input type="text" asp-for="SearchString" class="input-group-prepend" />
+
+            <select asp-for="FormularioBusqueda" asp-items="Model.Busqueda" class="btn btn-secondary">
+                <option value="">---Selecciona todos---</option>
+            </select>
+
+            <input type="submit" value="Aceptar" class="btn btn-info" />
+        </div>
+    </div>
+</form>
+<br />
+
+<table class="table table-striped">
+    <thead>
+        <tr style="color:#30365B;">
+            <th>
+
+                @Html.DisplayNameFor(model => model.Formulario[0].nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Formulario[0].apellidoP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Formulario[0].apellidoM)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Formulario[0].usuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Formulario[0].contrasena)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Formulario[0].telefono)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Formulario[0].direccion)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model.Formulario)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.apellidoP)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.apellidoM)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.usuario)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.contrasena)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.telefono)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.direccion)
+                </td>
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-default">Modificar</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-default">Detalle</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Eliminar</a>|
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div class="list-group">
+
+    <ul class="list-unstyled list-inline text-center">
+
+        <li style="margin-left: -80px; " class="list-group-item list-group-item-action list-group-item-primary">
+            <a asp-action="Inicio" class="btn btn-warning">Volver al inicio </a>
+        </li>
+        
+        <li  style="margin-left: 270px; " class="list-group-item list-group-item-action list-group-item-primary">
+            <a href="Formularios/ContactPDF" target="_blank" class="btn btn-success">Generar PDF </a>
+        </li>
+        <li  style="margin-left: 250px;"class="list-group-item list-group-item-action list-group-item-primary">
+            <a asp-controller="Home" asp-action="Index" class="btn btn-danger">Cerrar sesión </a>
+        </li>
+
+    </ul>
+</div>

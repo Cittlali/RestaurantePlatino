@@ -1,0 +1,74 @@
+﻿@model Practica.Models.Formulario
+
+@{
+    ViewData["Title"] = "Crear";
+}
+
+<h2>Nuevo usuario</h2>
+
+<h4>Datos solicitados </h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="nombre" class="control-label"></label>
+                <input asp-for="nombre" class="form-control" onkeypress="return sololetras(event);" />
+                <span asp-validation-for="nombre" class="text-danger" ></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="apellidoP" class="control-label"></label>
+                <input asp-for="apellidoP" class="form-control" onkeypress="return sololetras(event);" />
+                <span asp-validation-for="apellidoP" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="apellidoM" class="control-label"></label>
+                <input asp-for="apellidoM" class="form-control" onkeypress="return sololetras(event);" />
+                <span asp-validation-for="apellidoM" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="usuario" class="control-label"></label>
+                <input asp-for="usuario" class="form-control" />
+                <span asp-validation-for="usuario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="contrasena" class="control-label" ></label>
+                <input asp-for="contrasena" type="password" class="form-control" />
+                <span asp-validation-for="contrasena" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="telefono" class="control-label"></label>
+                <input asp-for="telefono" class="form-control" />
+                 <span asp-validation-for="telefono" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="direccion" class="control-label"></label>
+                <input asp-for="direccion" class="form-control"  />
+                <span asp-validation-for="direccion" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <input type="submit" value="Crear usuario" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" >Volver a la lista</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+        function sololetras(evt) {
+            var charcode = (evt.wich) ? evt.wich : event.keyCode
+            if (charcode > 31 && (charcode < 48 || charcode > 57))
+                return true;
+            return false;
+        }
+
+    </script>
+}

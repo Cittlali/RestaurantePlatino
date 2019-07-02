@@ -1,0 +1,60 @@
+﻿@model Practica.Models.Formulario
+
+@{
+    ViewData["Title"] = "Detalles";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>Datos Personales</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.apellidoP)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.apellidoP)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.apellidoM)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.apellidoM)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.usuario)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.usuario)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.contrasena)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.contrasena)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.telefono)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.telefono)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.direccion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.direccion)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Modificar</a> |
+    <a asp-action="Index">Volver a la lista</a>
+</div>

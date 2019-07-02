@@ -1,0 +1,53 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+</head>
+<body style="background-image: url(images/fondo2.jpg); " >
+
+    <section style="margin-left: 580px; margin-top: 100px; " ;>
+        <h1 style="color:#BF4D02; font-size:60px;margin-left:-35px;" ;>Iniciar Sesión</h1>
+
+        <div style="margin-left: 80px; margin-top: -30px;">
+            <img src="~/images/equipo1.png" />
+        </div>
+
+        @ViewBag.error
+
+        <form method="post" asp-controller="Formularios" asp-action="Inicio">
+
+            <table border="0" cellpadding="2" cellspacing="2">
+                <tr >
+                    
+                       
+                   
+                    <td > <img src="~/images/usuario1.png" />  <input type="text" name="username" placeholder="Usuario" style="width: 210px; height: 25px;"></td>
+                </tr>
+                <tr></tr>
+                <tr>
+                   
+                    <td> <img src="~/images/puerta1.png" /><input type="password" name="password" placeholder="Contraseña" style="width: 213px; height: 25px;"></td>
+                </tr>
+                <tr>
+                   
+                    <td><input type="submit" value="Aceptar" style="width: 100px; height: 30px; margin-top: 20px;margin-left: 150px; background-color:#F6A06E;"></td>
+                </tr>
+            </table>
+        </form>
+    </section>
+
+</body>
+</html>
+
+
+
+
+
+
+
