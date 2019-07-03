@@ -27,13 +27,13 @@ namespace Practica.Models
         public string apellidoM { get; set; }
 
         [Required(ErrorMessage = "El campo usuario es requerido")]
-        [StringLength(15, MinimumLength = 5, ErrorMessage = "El usuario es muy corto, intenta con otro")]
+        [StringLength(15, MinimumLength = 5, ErrorMessage = "Intenta con otro usuario")]
 
         [Display(Name = "Usuario")]
         public string usuario { get; set; }
 
         [Required(ErrorMessage = "El campo contraseña es requerido")]
-        [StringLength(15, MinimumLength = 5, ErrorMessage = "La contraseña es muy debil, ingresa otra")]
+        [StringLength(15, MinimumLength = 5, ErrorMessage = "Intenta con otra contraseña")]
 
         [Display(Name = "Contraseña")]
         public string contrasena { get; set; }
